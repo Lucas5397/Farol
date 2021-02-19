@@ -1,8 +1,29 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"7 ./Semaforo.h
-[; ;./Semaforo.h: 7: void semaforo_init (void);
+"4 ./Semaforo.h
+[; ;./Semaforo.h: 4: void semaforo_init (void);
 [v _semaforo_init `(v ~T0 @X0 0 ef ]
+"5
+[; ;./Semaforo.h: 5: void verde (void);
+[v _verde `(v ~T0 @X0 0 ef ]
+"9
+[; ;./Semaforo.h: 9: void vermelho_ped (void);
+[v _vermelho_ped `(v ~T0 @X0 0 ef ]
+"10
+[; ;./Semaforo.h: 10: int botao_ped (void);
+[v _botao_ped `(i ~T0 @X0 0 ef ]
+"5 ./delay.h
+[; ;./delay.h: 5: void delay (int t);
+[v _delay `(v ~T0 @X0 0 ef1`i ]
+"6 ./Semaforo.h
+[; ;./Semaforo.h: 6: void amarelo (void);
+[v _amarelo `(v ~T0 @X0 0 ef ]
+"7
+[; ;./Semaforo.h: 7: void vermelho (void);
+[v _vermelho `(v ~T0 @X0 0 ef ]
+"8
+[; ;./Semaforo.h: 8: void verde_ped (void);
+[v _verde_ped `(v ~T0 @X0 0 ef ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -273,19 +294,146 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16
 [; ;main.c: 16:     semaforo_init();
 [e ( _semaforo_init ..  ]
+"17
+[; ;main.c: 17:     int estado = 0;
+[v _estado `i ~T0 @X0 1 a ]
+[e = _estado -> 0 `i ]
 "18
-[; ;main.c: 18:     while(1)
+[; ;main.c: 18:     int t;
+[v _t `i ~T0 @X0 1 a ]
+"20
+[; ;main.c: 20:     while(1)
 [e :U 140 ]
-"19
-[; ;main.c: 19:     {
-{
 "21
-[; ;main.c: 21:     }
+[; ;main.c: 21:     {
+{
+"22
+[; ;main.c: 22:         switch (estado)
+[e $U 143  ]
+"23
+[; ;main.c: 23:         {
+{
+"24
+[; ;main.c: 24:             case 0:
+[e :U 144 ]
+"25
+[; ;main.c: 25:                     verde();
+[e ( _verde ..  ]
+"26
+[; ;main.c: 26:                     vermelho_ped();
+[e ( _vermelho_ped ..  ]
+"27
+[; ;main.c: 27:                     if( botao_ped() == 1 )
+[e $ ! == ( _botao_ped ..  -> 1 `i 145  ]
+"28
+[; ;main.c: 28:                     estado=1;
+[e = _estado -> 1 `i ]
+[e :U 145 ]
+"29
+[; ;main.c: 29:                     break;
+[e $U 142  ]
+"31
+[; ;main.c: 31:             case 1:
+[e :U 146 ]
+"32
+[; ;main.c: 32:                     delay(3000);
+[e ( _delay (1 -> 3000 `i ]
+"33
+[; ;main.c: 33:                     estado = 2;
+[e = _estado -> 2 `i ]
+"34
+[; ;main.c: 34:                     break;
+[e $U 142  ]
+"35
+[; ;main.c: 35:             case 2:
+[e :U 147 ]
+"36
+[; ;main.c: 36:                     t<=0;
+[e <= _t -> 0 `i ]
+"37
+[; ;main.c: 37:                     estado = 3;
+[e = _estado -> 3 `i ]
+"38
+[; ;main.c: 38:                     break;
+[e $U 142  ]
+"39
+[; ;main.c: 39:             case 3:
+[e :U 148 ]
+"40
+[; ;main.c: 40:                     amarelo();
+[e ( _amarelo ..  ]
+"41
+[; ;main.c: 41:                     delay(2000);
+[e ( _delay (1 -> 2000 `i ]
+"42
+[; ;main.c: 42:                     estado = 4;
+[e = _estado -> 4 `i ]
+"43
+[; ;main.c: 43:                     break;
+[e $U 142  ]
+"44
+[; ;main.c: 44:             case 4:
+[e :U 149 ]
+"45
+[; ;main.c: 45:                     t<=0;
+[e <= _t -> 0 `i ]
+"46
+[; ;main.c: 46:                     estado = 5;
+[e = _estado -> 5 `i ]
+"47
+[; ;main.c: 47:                     break;
+[e $U 142  ]
+"48
+[; ;main.c: 48:             case 5:
+[e :U 150 ]
+"49
+[; ;main.c: 49:                     vermelho();
+[e ( _vermelho ..  ]
+"50
+[; ;main.c: 50:                     verde_ped();
+[e ( _verde_ped ..  ]
+"51
+[; ;main.c: 51:                     delay(5000);
+[e ( _delay (1 -> 5000 `i ]
+"52
+[; ;main.c: 52:                     estado = 6;
+[e = _estado -> 6 `i ]
+"53
+[; ;main.c: 53:                     break;
+[e $U 142  ]
+"54
+[; ;main.c: 54:             case 6:
+[e :U 151 ]
+"55
+[; ;main.c: 55:                     t<=0;
+[e <= _t -> 0 `i ]
+"56
+[; ;main.c: 56:                     estado = 0;
+[e = _estado -> 0 `i ]
+"57
+[; ;main.c: 57:                     break;
+[e $U 142  ]
+"58
+[; ;main.c: 58:         }
+}
+[e $U 142  ]
+[e :U 143 ]
+[e [\ _estado , $ -> 0 `i 144
+ , $ -> 1 `i 146
+ , $ -> 2 `i 147
+ , $ -> 3 `i 148
+ , $ -> 4 `i 149
+ , $ -> 5 `i 150
+ , $ -> 6 `i 151
+ 142 ]
+[e :U 142 ]
+"59
+[; ;main.c: 59:     }
 }
 [e :U 139 ]
 [e $U 140  ]
 [e :U 141 ]
-"23
-[; ;main.c: 23: }
+"61
+[; ;main.c: 61: }
 [e :UE 138 ]
 }

@@ -2550,26 +2550,23 @@ void semaforo_init (void)
     PORTDbits.RD5 = 0;
     PORTDbits.RD3 = 0;
 }
-void verde (int t)
+void verde (void)
 {
      PORTDbits.RD6 = 0;
      PORTDbits.RD7 = 0;
      PORTDbits.RD5 = 1;
-     delay ( t );
 }
-void amarelo (int t)
+void amarelo (void)
 {
     PORTDbits.RD5 = 0;
     PORTDbits.RD7 = 0;
     PORTDbits.RD6 = 1;
-    delay ( t );
 }
-void vermelho (int t)
+void vermelho (void)
 {
     PORTDbits.RD5 = 0;
     PORTDbits.RD6 = 0;
     PORTDbits.RD7 = 1;
-    delay ( t );
 }
 void verde_ped (void)
 {
