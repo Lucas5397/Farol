@@ -11,8 +11,10 @@
 #include "delay.h"
 #include "Semaforo.h"
     
-void semaforo_init (void)
+void main (void)
 {
+    semaforo_init();
+    
     while(1)
     {
        

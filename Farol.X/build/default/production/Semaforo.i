@@ -1,4 +1,4 @@
-# 1 "Farol.c"
+# 1 "Semaforo.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Farol.c" 2
+# 1 "Semaforo.c" 2
 
 
 
@@ -2499,7 +2499,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 9 "Farol.c" 2
+# 9 "Semaforo.c" 2
 
 # 1 "./config.h" 1
 
@@ -2523,7 +2523,7 @@ extern __bank0 __bit __timeout;
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 10 "Farol.c" 2
+# 10 "Semaforo.c" 2
 
 # 1 "./delay.h" 1
 
@@ -2531,10 +2531,10 @@ extern __bank0 __bit __timeout;
 
 
 void delay (int t);
-# 11 "Farol.c" 2
+# 11 "Semaforo.c" 2
 
 
-void semafaro_init (void)
+void semaforo_init (void)
 {
     TRISDbits.TRISD7 = 0;
     TRISDbits.TRISD6 = 0;

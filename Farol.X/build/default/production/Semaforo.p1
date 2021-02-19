@@ -282,193 +282,193 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x BOR4V = BOR40V ]
 "21
 [p x WRT = OFF ]
-"13 Farol.c
-[; ;Farol.c: 13: void semafaro_init (void)
-[v _semafaro_init `(v ~T0 @X0 1 ef ]
+"13 Semaforo.c
+[; ;Semaforo.c: 13: void semaforo_init (void)
+[v _semaforo_init `(v ~T0 @X0 1 ef ]
 "14
-[; ;Farol.c: 14: {
+[; ;Semaforo.c: 14: {
 {
-[e :U _semafaro_init ]
+[e :U _semaforo_init ]
 [f ]
 "15
-[; ;Farol.c: 15:     TRISDbits.TRISD7 = 0;
+[; ;Semaforo.c: 15:     TRISDbits.TRISD7 = 0;
 [e = . . _TRISDbits 0 7 -> -> 0 `i `uc ]
 "16
-[; ;Farol.c: 16:     TRISDbits.TRISD6 = 0;
+[; ;Semaforo.c: 16:     TRISDbits.TRISD6 = 0;
 [e = . . _TRISDbits 0 6 -> -> 0 `i `uc ]
 "17
-[; ;Farol.c: 17:     TRISDbits.TRISD5 = 0;
+[; ;Semaforo.c: 17:     TRISDbits.TRISD5 = 0;
 [e = . . _TRISDbits 0 5 -> -> 0 `i `uc ]
 "18
-[; ;Farol.c: 18:     TRISDbits.TRISD0 = 1;
+[; ;Semaforo.c: 18:     TRISDbits.TRISD0 = 1;
 [e = . . _TRISDbits 0 0 -> -> 1 `i `uc ]
 "19
-[; ;Farol.c: 19:     TRISDbits.TRISD6 = 0;
+[; ;Semaforo.c: 19:     TRISDbits.TRISD6 = 0;
 [e = . . _TRISDbits 0 6 -> -> 0 `i `uc ]
 "20
-[; ;Farol.c: 20:     TRISDbits.TRISD5 = 0;
+[; ;Semaforo.c: 20:     TRISDbits.TRISD5 = 0;
 [e = . . _TRISDbits 0 5 -> -> 0 `i `uc ]
 "21
-[; ;Farol.c: 21:     TRISDbits.TRISD2 = 0;
+[; ;Semaforo.c: 21:     TRISDbits.TRISD2 = 0;
 [e = . . _TRISDbits 0 2 -> -> 0 `i `uc ]
 "22
-[; ;Farol.c: 22:     TRISDbits.TRISD3 = 0;
+[; ;Semaforo.c: 22:     TRISDbits.TRISD3 = 0;
 [e = . . _TRISDbits 0 3 -> -> 0 `i `uc ]
 "23
-[; ;Farol.c: 23:     PORTDbits.RD2 = 0;
+[; ;Semaforo.c: 23:     PORTDbits.RD2 = 0;
 [e = . . _PORTDbits 0 2 -> -> 0 `i `uc ]
 "24
-[; ;Farol.c: 24:     PORTDbits.RD7 = 0;
+[; ;Semaforo.c: 24:     PORTDbits.RD7 = 0;
 [e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
 "25
-[; ;Farol.c: 25:     PORTDbits.RD6 = 0;
+[; ;Semaforo.c: 25:     PORTDbits.RD6 = 0;
 [e = . . _PORTDbits 0 6 -> -> 0 `i `uc ]
 "26
-[; ;Farol.c: 26:     PORTDbits.RD5 = 0;
+[; ;Semaforo.c: 26:     PORTDbits.RD5 = 0;
 [e = . . _PORTDbits 0 5 -> -> 0 `i `uc ]
 "27
-[; ;Farol.c: 27:     PORTDbits.RD3 = 0;
+[; ;Semaforo.c: 27:     PORTDbits.RD3 = 0;
 [e = . . _PORTDbits 0 3 -> -> 0 `i `uc ]
 "28
-[; ;Farol.c: 28: }
+[; ;Semaforo.c: 28: }
 [e :UE 138 ]
 }
 "29
-[; ;Farol.c: 29: void verde (int t)
+[; ;Semaforo.c: 29: void verde (int t)
 [v _verde `(v ~T0 @X0 1 ef1`i ]
 "30
-[; ;Farol.c: 30: {
+[; ;Semaforo.c: 30: {
 {
 [e :U _verde ]
 "29
-[; ;Farol.c: 29: void verde (int t)
+[; ;Semaforo.c: 29: void verde (int t)
 [v _t `i ~T0 @X0 1 r1 ]
 "30
-[; ;Farol.c: 30: {
+[; ;Semaforo.c: 30: {
 [f ]
 "31
-[; ;Farol.c: 31:      PORTDbits.RD6 = 0;
+[; ;Semaforo.c: 31:      PORTDbits.RD6 = 0;
 [e = . . _PORTDbits 0 6 -> -> 0 `i `uc ]
 "32
-[; ;Farol.c: 32:      PORTDbits.RD7 = 0;
+[; ;Semaforo.c: 32:      PORTDbits.RD7 = 0;
 [e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
 "33
-[; ;Farol.c: 33:      PORTDbits.RD5 = 1;
+[; ;Semaforo.c: 33:      PORTDbits.RD5 = 1;
 [e = . . _PORTDbits 0 5 -> -> 1 `i `uc ]
 "34
-[; ;Farol.c: 34:      delay ( t );
+[; ;Semaforo.c: 34:      delay ( t );
 [e ( _delay (1 _t ]
 "35
-[; ;Farol.c: 35: }
+[; ;Semaforo.c: 35: }
 [e :UE 139 ]
 }
 "36
-[; ;Farol.c: 36: void amarelo (int t)
+[; ;Semaforo.c: 36: void amarelo (int t)
 [v _amarelo `(v ~T0 @X0 1 ef1`i ]
 "37
-[; ;Farol.c: 37: {
+[; ;Semaforo.c: 37: {
 {
 [e :U _amarelo ]
 "36
-[; ;Farol.c: 36: void amarelo (int t)
+[; ;Semaforo.c: 36: void amarelo (int t)
 [v _t `i ~T0 @X0 1 r1 ]
 "37
-[; ;Farol.c: 37: {
+[; ;Semaforo.c: 37: {
 [f ]
 "38
-[; ;Farol.c: 38:     PORTDbits.RD5 = 0;
+[; ;Semaforo.c: 38:     PORTDbits.RD5 = 0;
 [e = . . _PORTDbits 0 5 -> -> 0 `i `uc ]
 "39
-[; ;Farol.c: 39:     PORTDbits.RD7 = 0;
+[; ;Semaforo.c: 39:     PORTDbits.RD7 = 0;
 [e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
 "40
-[; ;Farol.c: 40:     PORTDbits.RD6 = 1;
+[; ;Semaforo.c: 40:     PORTDbits.RD6 = 1;
 [e = . . _PORTDbits 0 6 -> -> 1 `i `uc ]
 "41
-[; ;Farol.c: 41:     delay ( t );
+[; ;Semaforo.c: 41:     delay ( t );
 [e ( _delay (1 _t ]
 "42
-[; ;Farol.c: 42: }
+[; ;Semaforo.c: 42: }
 [e :UE 140 ]
 }
 "43
-[; ;Farol.c: 43: void vermelho (int t)
+[; ;Semaforo.c: 43: void vermelho (int t)
 [v _vermelho `(v ~T0 @X0 1 ef1`i ]
 "44
-[; ;Farol.c: 44: {
+[; ;Semaforo.c: 44: {
 {
 [e :U _vermelho ]
 "43
-[; ;Farol.c: 43: void vermelho (int t)
+[; ;Semaforo.c: 43: void vermelho (int t)
 [v _t `i ~T0 @X0 1 r1 ]
 "44
-[; ;Farol.c: 44: {
+[; ;Semaforo.c: 44: {
 [f ]
 "45
-[; ;Farol.c: 45:     PORTDbits.RD5 = 0;
+[; ;Semaforo.c: 45:     PORTDbits.RD5 = 0;
 [e = . . _PORTDbits 0 5 -> -> 0 `i `uc ]
 "46
-[; ;Farol.c: 46:     PORTDbits.RD6 = 0;
+[; ;Semaforo.c: 46:     PORTDbits.RD6 = 0;
 [e = . . _PORTDbits 0 6 -> -> 0 `i `uc ]
 "47
-[; ;Farol.c: 47:     PORTDbits.RD7 = 1;
+[; ;Semaforo.c: 47:     PORTDbits.RD7 = 1;
 [e = . . _PORTDbits 0 7 -> -> 1 `i `uc ]
 "48
-[; ;Farol.c: 48:     delay ( t );
+[; ;Semaforo.c: 48:     delay ( t );
 [e ( _delay (1 _t ]
 "49
-[; ;Farol.c: 49: }
+[; ;Semaforo.c: 49: }
 [e :UE 141 ]
 }
 "50
-[; ;Farol.c: 50: void verde_ped (void)
+[; ;Semaforo.c: 50: void verde_ped (void)
 [v _verde_ped `(v ~T0 @X0 1 ef ]
 "51
-[; ;Farol.c: 51: {
+[; ;Semaforo.c: 51: {
 {
 [e :U _verde_ped ]
 [f ]
 "52
-[; ;Farol.c: 52:     PORTDbits.RD3 = 0;
+[; ;Semaforo.c: 52:     PORTDbits.RD3 = 0;
 [e = . . _PORTDbits 0 3 -> -> 0 `i `uc ]
 "53
-[; ;Farol.c: 53:     PORTDbits.RD2 = 1;
+[; ;Semaforo.c: 53:     PORTDbits.RD2 = 1;
 [e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
 "54
-[; ;Farol.c: 54: }
+[; ;Semaforo.c: 54: }
 [e :UE 142 ]
 }
 "55
-[; ;Farol.c: 55: void vermelho_ped (void)
+[; ;Semaforo.c: 55: void vermelho_ped (void)
 [v _vermelho_ped `(v ~T0 @X0 1 ef ]
 "56
-[; ;Farol.c: 56: {
+[; ;Semaforo.c: 56: {
 {
 [e :U _vermelho_ped ]
 [f ]
 "57
-[; ;Farol.c: 57:     PORTDbits.RD2 = 0;
+[; ;Semaforo.c: 57:     PORTDbits.RD2 = 0;
 [e = . . _PORTDbits 0 2 -> -> 0 `i `uc ]
 "58
-[; ;Farol.c: 58:     PORTDbits.RD3 = 1;
+[; ;Semaforo.c: 58:     PORTDbits.RD3 = 1;
 [e = . . _PORTDbits 0 3 -> -> 1 `i `uc ]
 "59
-[; ;Farol.c: 59: }
+[; ;Semaforo.c: 59: }
 [e :UE 143 ]
 }
 "60
-[; ;Farol.c: 60: int botao_ped (void)
+[; ;Semaforo.c: 60: int botao_ped (void)
 [v _botao_ped `(i ~T0 @X0 1 ef ]
 "61
-[; ;Farol.c: 61: {
+[; ;Semaforo.c: 61: {
 {
 [e :U _botao_ped ]
 [f ]
 "62
-[; ;Farol.c: 62:     return (PORTDbits.RD0);
+[; ;Semaforo.c: 62:     return (PORTDbits.RD0);
 [e ) -> . . _PORTDbits 0 0 `i ]
 [e $UE 144  ]
 "63
-[; ;Farol.c: 63: }
+[; ;Semaforo.c: 63: }
 [e :UE 144 ]
 }

@@ -1,5 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
+"7 ./Semaforo.h
+[; ;./Semaforo.h: 7: void semaforo_init (void);
+[v _semaforo_init `(v ~T0 @X0 0 ef ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -234,16 +237,55 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-[v $root$_main `(v ~T0 @X0 0 e ]
-"11 main.c
-[; ;main.c: 11: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
+"8 ./config.h
+[p x FOSC = INTRC_NOCLKOUT ]
+"9
+[p x WDTE = OFF ]
+"10
+[p x PWRTE = OFF ]
+"11
+[p x MCLRE = OFF ]
 "12
-[; ;main.c: 12: {
+[p x CP = OFF ]
+"13
+[p x CPD = OFF ]
+"14
+[p x BOREN = OFF ]
+"15
+[p x IESO = OFF ]
+"16
+[p x FCMEN = OFF ]
+"17
+[p x LVP = OFF ]
+"20
+[p x BOR4V = BOR40V ]
+"21
+[p x WRT = OFF ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"14 main.c
+[; ;main.c: 14: void main (void)
+[v _main `(v ~T0 @X0 1 ef ]
+"15
+[; ;main.c: 15: {
 {
 [e :U _main ]
 [f ]
-"14
-[; ;main.c: 14: }
+"16
+[; ;main.c: 16:     semaforo_init();
+[e ( _semaforo_init ..  ]
+"18
+[; ;main.c: 18:     while(1)
+[e :U 140 ]
+"19
+[; ;main.c: 19:     {
+{
+"21
+[; ;main.c: 21:     }
+}
+[e :U 139 ]
+[e $U 140  ]
+[e :U 141 ]
+"23
+[; ;main.c: 23: }
 [e :UE 138 ]
 }

@@ -10,7 +10,7 @@
 #include "config.h"
 #include "delay.h"  
 
-void semafaro_init (void)
+void semaforo_init (void)
 {
     TRISDbits.TRISD7 = 0;
     TRISDbits.TRISD6 = 0;

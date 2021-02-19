@@ -2501,8 +2501,59 @@ extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
 # 9 "main.c" 2
 
+# 1 "./config.h" 1
 
-void main(void)
+
+
+
+
+
+
+#pragma config FOSC = INTRC_NOCLKOUT
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config MCLRE = OFF
+#pragma config CP = OFF
+#pragma config CPD = OFF
+#pragma config BOREN = OFF
+#pragma config IESO = OFF
+#pragma config FCMEN = OFF
+#pragma config LVP = OFF
+
+
+#pragma config BOR4V = BOR40V
+#pragma config WRT = OFF
+# 10 "main.c" 2
+
+# 1 "./delay.h" 1
+
+
+
+
+void delay (int t);
+# 11 "main.c" 2
+
+# 1 "./Semaforo.h" 1
+
+
+
+void verde (int t);
+void amarelo (int t);
+void vermelho (int t);
+void semaforo_init (void);
+void verde_ped (void);
+void vermelho_ped (void);
+int botao_ped (void);
+# 12 "main.c" 2
+
+
+void main (void)
 {
+    semaforo_init();
+
+    while(1)
+    {
+
+    }
 
 }
